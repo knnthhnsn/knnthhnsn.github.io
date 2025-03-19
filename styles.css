@@ -1,0 +1,311 @@
+/* Generelle stilarter */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #1a1a1a; /* Mørk baggrund */
+  color: #ffffff; /* Hvid tekst */
+  line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1a1a1a33;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ff950066; /* Orange kant */
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff9500; /* Orange logo */
+  font-family: "Orbitron", sans-serif;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.bitcoin-basics a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.bitcoin-basics a:hover {
+  color: #ff9500; /* Orange ved hover */
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff9500; /* Orange ved hover */
+}
+
+.nav-link.active {
+  color: #ff9500; /* Highlight color */
+  border-bottom: 3px solid #ff9500; /* Underline effect */
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("bitcoin-photoshop.jpg"); /* Ret her */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /*background: linear-gradient(135deg, #1a1a1a, #ff9500);  Gradient effekt */
+  padding: 0 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+/* Guide Section */
+.guide {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #1a1a1a;
+}
+
+.guide h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.guide p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 70%;
+}
+
+/* Info Boxes */
+.info-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolonner */
+  gap: 0.25rem; /* Afstand mellem bokse */
+  max-width: 600px;
+  height: 100%;
+  min-height: 250px;
+  margin: 0 auto; /* Centrerer containeren horisontalt */
+  justify-content: center; /* Centrerer grid-indholdet horisontalt */
+  align-content: center; /* Centrerer grid-indholdet vertikalt (hvis plads tillader det) */
+}
+
+.info-box {
+  background-color: #ff9500; /* Orange baggrund */
+  width: 100%; /* Fuld bredde i sin grid-celle */
+  max-width: 400px; /* Begrænser bredden lidt */
+  height: 100%;
+  min-height: 200px;
+  padding-top: 1rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  padding-bottom: 0rem;
+  border-radius: 0; /* Skarpe kanter som standard */
+  transition: all 1s ease; /* Smooth transition for alle ændringer */
+  position: relative; /* For at styre beskrivelsen */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lvl {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.title-box {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.paragraph {
+  opacity: 0%;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.p-wrapper {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100px;
+}
+
+.info-box:hover {
+  background-color: #2e2e2e; /* Hvid ved hover */
+  transform: scale(1); /* Let scale-effekt */
+  color: #1a1a1a; /* Mørk tekst ved hover */
+  border-radius: 15px; /* Afrundede kanter ved hover */
+  transform: translateY(-10%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.info-box:hover .lvl {
+  color: #ff9500;
+  transform: translateY(40%);
+  transition: transform 1s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 80%;
+}
+
+.info-box:hover .title-box {
+  color: #ff9500;
+  transform: translateY(40%);
+  transition: transform 1s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.info-box:hover .paragraph {
+  color: #ffffff;
+  transform: translateY(-10%);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 70%;
+}
+
+.info-box h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.info-box p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: 1rem;
+  margin-right: auto;
+  text-align: left;
+  opacity: 0%;
+}
+
+.info-box:hover .description {
+  opacity: 1; /* Vises ved hover */
+}
+
+.link-wrapper {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.info-box:hover .read-more {
+  color: #ff9500; /* Orange ved hover */
+}
+
+/* Responsivt design - tilpasset til 2x2 */
+@media (max-width: 768px) {
+  .info-boxes {
+    grid-template-columns: 1fr; /* 1 kolonne på små skærme */
+  }
+
+  .info-box {
+    max-width: 300px; /* Mindre bredde på små skærme */
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #ff9500;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ff9500;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+/* Responsivt design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .info-box {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
